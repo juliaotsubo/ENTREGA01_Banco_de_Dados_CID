@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dicionário de Dados Conceitual - EK Odontologia</title>
+<style>
+body{font-family:Arial,sans-serif;line-height:1.5;margin:0;background:#f5f7fa;color:#222}
+main{max-width:1100px;margin:40px auto;background:white;padding:35px;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+h1{margin-bottom:5px} h2{margin-top:35px;border-bottom:2px solid #ddd;padding-bottom:8px}
+.intro{color:#555;margin-bottom:25px}
+table{width:100%;border-collapse:collapse;margin:12px 0 28px}
+th,td{border:1px solid #d9dee5;padding:10px;text-align:left;vertical-align:top}
+th{background:#eef1f5} code{background:#f0f2f4;padding:2px 5px;border-radius:4px}
+footer{margin-top:35px;color:#666;font-size:.9em}
+</style>
+</head>
+<body>
+<main>
+<h1>5. Dicionário de Dados Conceitual</h1>
+<h2>EK Odontologia</h2>
+
+<p class="intro">O Dicionário de Dados Conceitual da EK Odontologia organiza as principais informações necessárias ao sistema do consultório. Foram definidas as entidades Paciente, Prontuário, Dentista, Consulta, Procedimento, Pagamento, Material, Utilização de Material, Usuário e Acesso ao Prontuário, com seus atributos, exemplos e regras. A estrutura considera o cadastro de pacientes e profissionais, agendamentos, prontuários, procedimentos, pagamentos, controle de materiais, segurança e sigilo das informações.</p>
+<p><strong>Observação:</strong> Todos os dados de exemplo são fictícios e utilizados exclusivamente para fins acadêmicos.</p>
+
+<h2>Entidade: Paciente</h2>
+<table><tr><th>Atributo</th><th>Exemplo fictício</th><th>O que representa</th><th>Regra</th></tr>
+<tr><td>ID_Paciente</td><td>PAC001</td><td>Identificação do paciente</td><td>Deve ser único</td></tr>
+<tr><td>Nome</td><td>Lucas Ferreira</td><td>Nome do paciente</td><td>Obrigatório</td></tr>
+<tr><td>CPF</td><td>123.456.789-00</td><td>CPF do paciente</td><td>Deve ser válido e único</td></tr>
+<tr><td>Data_Nascimento</td><td>14/05/1998</td><td>Data de nascimento</td><td>Data válida</td></tr>
+<tr><td>Telefone</td><td>(11) 99999-1234</td><td>Telefone para contato</td><td>Formato válido</td></tr>
+<tr><td>E-mail</td><td>lucas.ferreira@exemplo.com</td><td>E-mail para contato</td><td>Formato válido</td></tr></table>
+
+<h2>Entidade: Prontuário</h2>
+<table><tr><th>Atributo</th><th>Exemplo fictício</th><th>O que representa</th><th>Regra</th></tr>
+<tr><td>ID_Prontuario</td><td>PRO001</td><td>Identificação do prontuário</td><td>Deve ser único</td></tr>
+<tr><td>Data_Atualizacao</td><td>25/09/2026</td><td>Última atualização</td><td>Data válida</td></tr>
+<tr><td>Historico</td><td>Tratamento odontológico</td><td>Histórico odontológico</td><td>Acesso restrito</td></tr>
+<tr><td>Observacoes</td><td>Retorno em 30 dias</td><td>Informações adicionais</td><td>Opcional</td></tr></table>
+
+<h2>Entidade: Dentista</h2>
+<table><tr><th>Atributo</th><th>Exemplo fictício</th><th>O que representa</th><th>Regra</th></tr>
+<tr><td>ID_Dentista</td><td>DEN001</td><td>Identificação da dentista</td><td>Deve ser único</td></tr>
+<tr><td>Nome</td><td>Dra. Mariana Costa</td><td>Nome da profissional</td><td>Obrigatório</td></tr>
+<tr><td>CRO</td><td>CRO-SP 12345</td><td>Registro profissional</td><td>Deve ser válido</td></tr>
+<tr><td>Especialidade</td><td>Ortodontia</td><td>Área de atuação</td><td>Pode ser informada</td></tr></table>
+
+<h2>Entidade: Consulta</h2>
+<table><tr><th>Atributo</th><th>Exemplo fictício</th><th>O que representa</th><th>Regra</th></tr>
+<tr><td>ID_Consulta</td><td>CON001</td><td>Identificação da consulta</td><td>Deve ser único</td></tr>
+<tr><td>Data</td><td>25/09/2026</td><td>Data da consulta</td><td>Obrigatória</td></tr>
+<tr><td>Horario</td><td>14:30</td><td>Horário da consulta</td><td>Obrigatório e disponível</td></tr>
+<tr><td>Status</td><td>Agendada</td><td>Situação da consulta</td><td>Agendada, realizada ou cancelada</td></tr></table>
+
+<h2>Entidade: Procedimento</h2>
+<table><tr><th>Atributo</th><th>Exemplo fictício</th><th>O que representa</th><th>Regra</th></tr>
+<tr><td>ID_Procedimento</td><td>PCD001</td><td>Identificação do procedimento</td><td>Deve ser único</td></tr>
+<tr><td>Nome</td><td>Limpeza odontológica</td><td>Procedimento realizado</td><td>Obrigatório</td></tr>
+<tr><td>Descricao</td><td>Limpeza e remoção de tártaro</td><td>Detalhes do procedimento</td><td>Descrever o atendimento</td></tr>
+<tr><td>Valor</td><td>R$ 180,00</td><td>Valor do procedimento</td><td>Deve ser positivo</td></tr></table>
+
+<h2>Entidade: Pagamento</h2>
+<table><tr><th>Atributo</th><th>Exemplo fictício</th><th>O que representa</th><th>Regra</th></tr>
+<tr><td>ID_Pagamento</td><td>PAG001</td><td>Identificação do pagamento</td><td>Deve ser único</td></tr>
+<tr><td>Data_Pagamento</td><td>25/09/2026</td><td>Data do pagamento</td><td>Data válida</td></tr>
+<tr><td>Valor</td><td>R$ 180,00</td><td>Valor pago</td><td>Deve ser positivo</td></tr>
+<tr><td>Forma_Pagamento</td><td>PIX</td><td>Forma de pagamento</td><td>Deve ser registrada</td></tr>
+<tr><td>Status</td><td>Pago</td><td>Situação financeira</td><td>Pago ou pendente</td></tr></table>
+
+<h2>Entidade: Material</h2>
+<table><tr><th>Atributo</th><th>Exemplo fictício</th><th>O que representa</th><th>Regra</th></tr>
+<tr><td>ID_Material</td><td>MAT001</td><td>Identificação do material</td><td>Deve ser único</td></tr>
+<tr><td>Nome</td><td>Luva descartável</td><td>Material utilizado</td><td>Obrigatório</td></tr>
+<tr><td>Quantidade</td><td>150</td><td>Quantidade disponível</td><td>Não pode ser negativa</td></tr>
+<tr><td>Unidade</td><td>Unidade</td><td>Unidade de controle</td><td>Obrigatória</td></tr>
+<tr><td>Data_Validade</td><td>10/12/2027</td><td>Validade do material</td><td>Data válida</td></tr>
+<tr><td>Estoque_Minimo</td><td>50</td><td>Quantidade mínima desejada</td><td>Igual ou maior que zero</td></tr></table>
+
+<h2>Entidade: Utilização de Material</h2>
+<table><tr><th>Atributo</th><th>Exemplo fictício</th><th>O que representa</th><th>Regra</th></tr>
+<tr><td>ID_Utilizacao</td><td>UTL001</td><td>Identificação da utilização</td><td>Deve ser único</td></tr>
+<tr><td>Quantidade_Utilizada</td><td>2</td><td>Quantidade de material utilizada</td><td>Deve ser positiva</td></tr>
+<tr><td>Data_Utilizacao</td><td>25/09/2026</td><td>Data da utilização</td><td>Data válida</td></tr></table>
+
+<h2>Entidade: Usuário</h2>
+<table><tr><th>Atributo</th><th>Exemplo fictício</th><th>O que representa</th><th>Regra</th></tr>
+<tr><td>ID_Usuario</td><td>USR001</td><td>Identificação do usuário</td><td>Deve ser único</td></tr>
+<tr><td>Nome_Usuario</td><td>Mariana Costa</td><td>Nome do usuário</td><td>Obrigatório</td></tr>
+<tr><td>Login</td><td>mariana.costa</td><td>Identificação para acesso</td><td>Deve ser único</td></tr>
+<tr><td>Senha</td><td>********</td><td>Credencial de acesso</td><td>Deve ser protegida</td></tr>
+<tr><td>Perfil</td><td>Dentista</td><td>Nível de acesso</td><td>Define permissões</td></tr>
+<tr><td>Status</td><td>Ativo</td><td>Situação do usuário</td><td>Ativo ou inativo</td></tr></table>
+
+<h2>Entidade: Acesso ao Prontuário</h2>
+<table><tr><th>Atributo</th><th>Exemplo fictício</th><th>O que representa</th><th>Regra</th></tr>
+<tr><td>ID_Acesso</td><td>ACE001</td><td>Identificação do acesso</td><td>Deve ser único</td></tr>
+<tr><td>Data_Acesso</td><td>25/09/2026 14:35</td><td>Data e horário do acesso</td><td>Data e hora válidas</td></tr>
+<tr><td>Tipo_Acesso</td><td>Consulta</td><td>Tipo de acesso realizado</td><td>Deve ser registrado</td></tr></table>
+
+<h2>Dados fictícios das cirurgiãs-dentistas</h2>
+<table><tr><th>ID</th><th>Nome fictício</th><th>CRO fictício</th><th>Especialidade</th></tr>
+<tr><td>DEN001</td><td>Dra. Mariana Costa</td><td>CRO-SP 12345</td><td>Ortodontia</td></tr>
+<tr><td>DEN002</td><td>Dra. Beatriz Almeida</td><td>CRO-SP 23456</td><td>Clínica Geral</td></tr>
+<tr><td>DEN003</td><td>Dra. Camila Rodrigues</td><td>CRO-SP 34567</td><td>Endodontia</td></tr></table>
+
+<h2>Conclusão</h2>
+<p>O dicionário de dados permite organizar as informações da EK Odontologia de forma estruturada, servindo como base para a modelagem conceitual e para o DER do sistema. A estrutura contempla as necessidades de organização da agenda, prontuários, pagamentos e materiais, mantendo o controle de acesso às informações clínicas e financeiras.</p>
+
+<footer>Documento elaborado para fins acadêmicos.</footer>
+</main>
+</body>
+</html>
