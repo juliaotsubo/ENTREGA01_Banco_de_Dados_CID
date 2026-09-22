@@ -68,8 +68,8 @@ Dessa forma, apresenta quantidade e variedade de informações suficientes para 
 **E-mail:** consultorioodontoek@gmail.com
 
 **Responsáveis:**
-- Dra. Elielma Gomes
 - Dra. Kátia Pinheiro
+- Dra. Elielma Gomes
 
 **Instagram:** @ek_odontologia
 
@@ -112,27 +112,168 @@ O fluxograma encontra-se anexado separadamente ao repositório.
 
 ## 3.1 Requisitos Funcionais
 
-O sistema deverá:
+O sistema deverá ter os seguintes processos:
 
-- Permitir cadastrar pacientes;
-- Permitir consultar e atualizar os dados dos pacientes;
-- Permitir cadastrar dentistas;
-- Permitir cadastrar e consultar consultas;
-- Permitir realizar o agendamento de consultas;
-- Permitir cancelar ou remarcar consultas;
-- Permitir verificar a disponibilidade de horários;
-- Permitir registrar procedimentos realizados;
-- Permitir consultar o histórico do paciente por meio do prontuário;
-- Permitir atualizar informações do prontuário;
-- Permitir registrar pagamentos;
-- Permitir consultar informações relacionadas aos pagamentos;
-- Permitir cadastrar materiais;
-- Permitir controlar a quantidade de materiais disponíveis;
-- Permitir registrar os materiais utilizados em procedimentos;
-- Permitir controlar o estoque mínimo dos materiais;
-- Permitir cadastrar usuários do sistema;
-- Permitir controlar o acesso aos prontuários;
-- Permitir registrar os acessos realizados aos prontuários.
+1. Cadastro dos pacientes
+
+Para realizar essa função, é necessário:
+
+- Nome completo
+- Data de nascimento/idade
+- CPF
+- Telefone
+- E-mail
+- Endereço
+- Número do paciente/ID
+- Dados relevantes para identificação
+
+2. Cadastro dos dentistas
+
+Para realizar essa função, é necessário:
+
+- Nome completo
+- CPF
+- CRO
+- Telefone
+- E-mail
+- Especialidade
+- Número do dentista/ID
+- Dias e horários de atendimento
+
+3. Visualizar a agenda dos dentistas
+
+Para realizar essa função, é necessário:
+
+- Identificação do dentista
+- Data
+- Horário
+- Consultas agendadas
+- Nome do paciente
+- Status da consulta (agendada, cancelada, realizada etc.)
+- Horários disponíveis
+
+4. Agendar consultas
+
+Para realizar essa função, é necessário:
+
+- Paciente
+- Dentista
+- Data
+- Horário
+- Tipo/motivo da consulta
+- Duração prevista
+- Status da consulta
+- Verificação da disponibilidade do dentista no horário escolhido
+
+5. Cancelar consultas
+
+Para realizar essa função, é necessário:
+
+- Identificação da consulta
+- Paciente
+- Dentista
+- Motivo do cancelamento, se necessário
+- Alteração do status para “cancelada”
+- Liberação do horário na agenda
+
+6. Remarcar consultas
+
+Para realizar essa função, é necessário:
+
+- Identificação da consulta atual
+- Paciente
+- Dentista
+- Novo dia
+- Novo horário
+- Verificação da disponibilidade
+- Registro da alteração
+- Liberação do horário anterior
+
+7. Dentista acessar os dados dos pacientes
+
+Para realizar essa função, é necessário:
+
+- Login do dentista
+- Senha
+- Identificação do profissional
+- Permissão de acesso
+- Cadastro do paciente
+- Dados pessoais e clínicos autorizados
+
+8. Registrar consultas realizadas
+
+Para realizar essa função, é necessário:
+
+- Paciente
+- Dentista
+- Data
+- Horário
+- Motivo da consulta
+- Observações do dentista
+- Diagnóstico, quando aplicável
+- Status como “realizada”
+
+9. Registrar procedimentos odontológicos realizados
+
+Para realizar essa função, é necessário:
+
+- Paciente
+- Consulta relacionada
+- Dentista responsável
+- Nome do procedimento
+- Data
+- Descrição/observações
+- Valor, quando aplicável
+
+10. Consultar histórico de consultas dos pacientes
+
+Para realizar essa função, é necessário:
+
+- Identificação do paciente
+- Consultas anteriores
+- Data
+- Dentista
+- Motivo/tipo da consulta
+- Status
+- Observações ou informações registradas
+
+11. Consultar histórico de procedimentos odontológicos dos pacientes
+
+Para realizar essa função, é necessário:
+
+- Identificação do paciente
+- Procedimentos realizados
+- Data
+- Dentista responsável
+- Consulta relacionada
+- Nome do procedimento
+- Observações
+- Valor, se houver
+
+12. Registrar pagamentos realizados e pendentes
+
+Para realizar essa função, é necessário:
+
+- Paciente
+- Consulta/procedimento relacionado
+- Valor
+- Data de pagamento
+- Forma de pagamento
+- Status: pago ou pendente
+- Identificação do pagamento
+
+13. Emitir recibos e comprovantes de pagamento
+
+Para realizar essa função, é necessário:
+
+- Identificação do paciente
+- Consulta/procedimento
+- Valor pago
+- Data do pagamento
+- Forma de pagamento
+- Número/identificação do pagamento
+- Geração do recibo/comprovante
+-
 
 ## 3.2 Requisitos Não Funcionais
 
@@ -192,9 +333,8 @@ As entidades utilizadas no modelo são:
 - PROCEDIMENTO;
 - PAGAMENTO;
 - MATERIAL;
-- UTILIZACAO_MATERIAL;
-- USUARIO;
-- ACESSO_PRONTUARIO.
+- PROCEDIMENTO_MATERIAL;
+- ESPECIALIDADE;
 
 O **Dicionário de Dados em HTML** está anexado separadamente ao repositório.
 
@@ -279,7 +419,7 @@ Representa os materiais disponíveis e controlados pelo consultório.
 - Data_Validade;
 - Estoque_Minimo.
 
-### UTILIZACAO_MATERIAL
+### PROCEDIMENTO_MATERIAL
 
 Representa o registro da utilização de materiais durante os procedimentos.
 
@@ -290,24 +430,12 @@ Representa o registro da utilização de materiais durante os procedimentos.
 
 ### USUARIO
 
-Representa os usuários autorizados a utilizar o sistema.
+Representa a área de atuação odontológica da(o) dentista.
 
 **Atributos:**
-- ID_Usuario;
-- Nome_Usuario;
-- Login;
-- Senha;
-- Perfil;
-- Status.
-
-### ACESSO_PRONTUARIO
-
-Representa os registros de acesso dos usuários aos prontuários.
-
-**Atributos:**
-- ID_Acesso;
-- Data_Acesso;
-- Tipo_Acesso.
+- ID_Especialidade;
+- Nome_especialidade;
+- Descrição;
 
 ## Relacionamentos pertinentes
 
@@ -316,10 +444,9 @@ Representa os registros de acesso dos usuários aos prontuários.
 - **DENTISTA — REALIZA — CONSULTA:** um dentista pode realizar várias consultas.
 - **CONSULTA — POSSUI — PROCEDIMENTO:** uma consulta pode possuir vários procedimentos.
 - **PROCEDIMENTO — POSSUI — PAGAMENTO:** um procedimento pode possuir registros de pagamento.
-- **PROCEDIMENTO — UTILIZA — UTILIZACAO_MATERIAL:** um procedimento pode utilizar vários registros de materiais.
-- **MATERIAL — PARTICIPA DE — UTILIZACAO_MATERIAL:** um material pode participar de vários registros de utilização.
-- **USUARIO — REALIZA — ACESSO_PRONTUARIO:** um usuário pode realizar vários acessos aos prontuários.
-- **PRONTUARIO — RECEBE — ACESSO_PRONTUARIO:** um prontuário pode receber vários registros de acesso.
+- **PROCEDIMENTO — UTILIZA — PROCEDIMENTO_MATERIAL:** um procedimento pode utilizar vários registros de materiais.
+- **MATERIAL — PARTICIPA DE — PROCEDIMENTO_MATERIAL:** um material pode participar de vários registros de utilização.
+- **DENTISTA - POSSUI - ESPECIALIDADE:** uma especialidade pode estar associada a vários dentistas
 
 ## Restrições e políticas organizacionais aplicadas ao modelo
 
@@ -342,9 +469,8 @@ O DER contém as seguintes entidades:
 - PROCEDIMENTO;
 - PAGAMENTO;
 - MATERIAL;
-- UTILIZACAO_MATERIAL;
-- USUARIO;
-- ACESSO_PRONTUARIO.
+- PROCEDIMENTO_MATERIAL;
+- ESPECIALIDADE;
 
 O diagrama está anexado separadamente ao repositório em formato de imagem.
 
@@ -360,9 +486,7 @@ A entidade **CONSULTA** foi criada para representar os agendamentos e atendiment
 
 A entidade **PROCEDIMENTO** foi separada de CONSULTA para representar os diferentes procedimentos que podem ocorrer durante uma consulta. Essa separação também permite relacionar os procedimentos aos respectivos pagamentos e aos materiais utilizados.
 
-A entidade **UTILIZACAO_MATERIAL** foi utilizada como entidade associativa para representar a utilização de materiais nos procedimentos, permitindo registrar informações específicas dessa utilização, como quantidade e data.
-
-As entidades **USUARIO** e **ACESSO_PRONTUARIO** foram incluídas para representar o controle de acesso às informações dos prontuários, permitindo identificar os usuários e registrar os acessos realizados.
+A entidade **PROCEDIMENTO_MATERIAL** foi utilizada como entidade associativa para representar a utilização de materiais nos procedimentos, permitindo registrar informações específicas dessa utilização, como quantidade e data.
 
 As cardinalidades foram definidas de acordo com a lógica dos processos representados no modelo e com a necessidade de permitir que a estrutura possa ser expandida nas próximas etapas do projeto.
 
@@ -444,3 +568,4 @@ Por esse motivo, as respostas da IA foram revisadas pelo grupo e comparadas com 
 - `DER` — Diagrama Entidade-Relacionamento Conceitual em imagem;
 - `Dicionario_de_Dados.html` — Dicionário de Dados Conceitual;
 - `Fluxograma_Cancelamento_Remarcacao.png` — fluxograma do processo de cancelamento ou remarcação de consulta.
+- `avaliacao_participação_grupo.pdf` - autoavaliação do grupo
