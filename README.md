@@ -428,7 +428,7 @@ Representa o registro da utilização de materiais durante os procedimentos.
 - Quantidade_Utilizada;
 - Data_Utilizacao.
 
-### USUARIO
+### ESPECIALIDADE
 
 Representa a área de atuação odontológica da(o) dentista.
 
