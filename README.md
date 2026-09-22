@@ -75,7 +75,7 @@ Dessa forma, apresenta quantidade e variedade de informações suficientes para 
 
 **WhatsApp:** 11953114998
 
-**localização:** https://www.google.com.br/maps/@-23.5704211,-46.7109521,729a,90y,354.68h,81.55t/data=!3m7!1e1!3m5!1sZQ7wLq3m06yJRXbGsnQGhA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D8.448038270448905%26panoid%3DZQ7wLq3m06yJRXbGsnQGhA%26yaw%3D354.6787741382405!7i16384!8i8192?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDkxNC4wIKXMDSoASAFQAw%3D%3D
+[🔗 localização](https://www.google.com.br/maps/@-23.5704211,-46.7109521,729a,90y,354.68h,81.55t/data=!3m7!1e1!3m5!1sZQ7wLq3m06yJRXbGsnQGhA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D8.450000000000003%26panoid%3DZQ7wLq3m06yJRXbGsnQGhA%26yaw%3D354.68!7i16384!8i8192?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDkyMS4wIKXMDSoASAFQAw%3D%3D)
 
 As evidências da existência da organização e do acesso para levantamento de informações serão apresentadas por meio dos registros e materiais disponibilizados pelo grupo, respeitando a privacidade dos pacientes e demais envolvidos.
 
