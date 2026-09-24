@@ -333,7 +333,6 @@ As entidades utilizadas no modelo são:
 - PROCEDIMENTO;
 - PAGAMENTO;
 - MATERIAL;
-- PROCEDIMENTO_MATERIAL;
 - ESPECIALIDADE;
 
 O **Dicionário de Dados em HTML** está anexado separadamente ao repositório.
@@ -419,15 +418,6 @@ Representa os materiais disponíveis e controlados pelo consultório.
 - Data_Validade;
 - Estoque_Minimo.
 
-### PROCEDIMENTO_MATERIAL
-
-Representa o registro da utilização de materiais durante os procedimentos.
-
-**Atributos:**
-- ID_Utilizacao;
-- Quantidade_Utilizada;
-- Data_Utilizacao.
-
 ### ESPECIALIDADE
 
 Representa a área de atuação odontológica da(o) dentista.
@@ -444,8 +434,6 @@ Representa a área de atuação odontológica da(o) dentista.
 - **DENTISTA — REALIZA — CONSULTA:** um dentista pode realizar várias consultas.
 - **CONSULTA — POSSUI — PROCEDIMENTO:** uma consulta pode possuir vários procedimentos.
 - **PROCEDIMENTO — POSSUI — PAGAMENTO:** um procedimento pode possuir registros de pagamento.
-- **PROCEDIMENTO — UTILIZA — PROCEDIMENTO_MATERIAL:** um procedimento pode utilizar vários registros de materiais.
-- **MATERIAL — PARTICIPA DE — PROCEDIMENTO_MATERIAL:** um material pode participar de vários registros de utilização.
 - **DENTISTA - POSSUI - ESPECIALIDADE:** uma especialidade pode estar associada a vários dentistas
 
 ## Restrições e políticas organizacionais aplicadas ao modelo
@@ -469,7 +457,6 @@ O DER contém as seguintes entidades:
 - PROCEDIMENTO;
 - PAGAMENTO;
 - MATERIAL;
-- PROCEDIMENTO_MATERIAL;
 - ESPECIALIDADE;
 
 O diagrama está anexado separadamente ao repositório em formato de imagem.
